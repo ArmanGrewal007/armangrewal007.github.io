@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://armangrewal007.github.io/sitemap-index.xml
-Host: https://armangrewal007.github.io
