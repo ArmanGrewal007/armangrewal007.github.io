@@ -27,13 +27,13 @@ const StyledProjectsSection = styled.section`
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
 
     @media (max-width: 1080px) {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -163,6 +163,12 @@ const StyledProject = styled.li`
       }
     }
   }
+
+  .project-company {
+    color: var(--green); /* Or any color from your theme */
+    font-size: var(--fz-sm); /* Adjust as needed */
+    margin-bottom: 10px; /* Space below the company text */
+  }
 `;
 
 const Projects = () => {
@@ -182,6 +188,7 @@ const Projects = () => {
               tech
               github
               external
+              company
             }
             html
           }
@@ -213,7 +220,7 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title, tech } = frontmatter;
+    const { github, external, title, tech, company } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -247,6 +254,8 @@ const Projects = () => {
             </a>
           </h3>
 
+          {company && <p className="project-company">{company}</p>}
+  
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
 

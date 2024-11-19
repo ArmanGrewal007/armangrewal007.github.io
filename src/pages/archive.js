@@ -130,7 +130,9 @@ const StyledTableContainer = styled.div`
 `;
 
 const ArchivePage = ({ location, data }) => {
-  const projects = data.allMarkdownRemark.edges;
+  const allProjects = data.allMarkdownRemark.edges;
+  const projects = allProjects.filter(({ node }) =>
+    node.frontmatter.showInProjects === false);
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
@@ -245,6 +247,7 @@ export const pageQuery = graphql`
             github
             external
             company
+            showInProjects
           }
           html
         }
