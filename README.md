@@ -1,6 +1,3 @@
 # Steps
 
-```bash
-npm init -y
-npm install animejs babel-plugin-styled-components gatsby-plugin-google-analytics gatsby-plugin-image gatsby-plugin-manifest gatsby-plugin-netlify gatsby-plugin-offline gatsby-plugin-react-helmet gatsby-plugin-robots-txt gatsby-plugin-sharp gatsby-plugin-sitemap gatsby-plugin-styled-components gatsby-remark-external-links gatsby-remark-images gatsby-remark-prismjs gatsby-source-filesystem gatsby-transformer-remark gatsby-transformer-sharp lodash prismjs prop-types react react-dom react-helmet react-transition-group scrollreveal styled-components gatsby-remark-code-titles
-```
+<div align="center"><img src="https://github.com/user-attachments/assets/7214ba10-f54a-4a8e-a398-7b93493aabd0"></div>
