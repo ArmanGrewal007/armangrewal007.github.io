@@ -1,3 +1,3 @@
 # Steps
 
-<div align="center"><img src="https://github.com/user-attachments/assets/7214ba10-f54a-4a8e-a398-7b93493aabd0"></div>
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/tHIRLHtNwxpjIFqPdV" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/justin-raccoon-pedro-tHIRLHtNwxpjIFqPdV">via GIPHY</a></p>
