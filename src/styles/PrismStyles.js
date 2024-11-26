@@ -21,10 +21,10 @@ const PrismStyles = css`
   * and overflow that we removed from <pre>.
   */
   .gatsby-highlight {
-    background-color: ${prismColors.bg};
+    // background-color: ${prismColors.bg};
     color: ${prismColors.grey};
     border-radius: var(--border-radius);
-    margin: 2em 0;
+    margin: 0em 0;
     padding: 1.25em;
     overflow: auto;
     position: relative;
@@ -59,7 +59,7 @@ const PrismStyles = css`
     overflow: initial;
     float: left; /* 1 */
     min-width: 100%; /* 2 */
-    padding-top: 2em;
+    // padding-top: 2em;
   }
 
   /* File names */
@@ -106,55 +106,55 @@ const PrismStyles = css`
     left: 1.25rem;
     padding: 0.25rem 0.5rem;
   }
-  .gatsby-highlight pre[class='language-javascript']::before {
-    content: 'js';
-  }
-  .gatsby-highlight pre[class='language-js']::before {
-    content: 'js';
-  }
-  .gatsby-highlight pre[class='language-jsx']::before {
-    content: 'jsx';
-  }
-  .gatsby-highlight pre[class='language-graphql']::before {
-    content: 'GraphQL';
-  }
-  .gatsby-highlight pre[class='language-html']::before {
-    content: 'html';
-  }
-  .gatsby-highlight pre[class='language-css']::before {
-    content: 'css';
-  }
-  .gatsby-highlight pre[class='language-mdx']::before {
-    content: 'mdx';
-  }
-  .gatsby-highlight pre[class='language-shell']::before {
-    content: 'shell';
-  }
-  .gatsby-highlight pre[class='language-sh']::before {
-    content: 'sh';
-  }
-  .gatsby-highlight pre[class='language-bash']::before {
-    content: 'bash';
-  }
-  .gatsby-highlight pre[class='language-yaml']::before {
-    content: 'yaml';
-  }
-  .gatsby-highlight pre[class='language-markdown']::before {
-    content: 'md';
-  }
-  .gatsby-highlight pre[class='language-json']::before,
-  .gatsby-highlight pre[class='language-json5']::before {
-    content: 'json';
-  }
-  .gatsby-highlight pre[class='language-diff']::before {
-    content: 'diff';
-  }
-  .gatsby-highlight pre[class='language-text']::before {
-    content: 'text';
-  }
-  .gatsby-highlight pre[class='language-flow']::before {
-    content: 'flow';
-  }
+  // .gatsby-highlight pre[class='language-javascript']::before {
+  //   content: 'js';
+  // }
+  // .gatsby-highlight pre[class='language-js']::before {
+  //   content: 'js';
+  // }
+  // .gatsby-highlight pre[class='language-jsx']::before {
+  //   content: 'jsx';
+  // }
+  // .gatsby-highlight pre[class='language-graphql']::before {
+  //   content: 'GraphQL';
+  // }
+  // .gatsby-highlight pre[class='language-html']::before {
+  //   content: 'html';
+  // }
+  // .gatsby-highlight pre[class='language-css']::before {
+  //   content: 'css';
+  // }
+  // .gatsby-highlight pre[class='language-mdx']::before {
+  //   content: 'mdx';
+  // }
+  // .gatsby-highlight pre[class='language-shell']::before {
+  //   content: 'shell';
+  // }
+  // .gatsby-highlight pre[class='language-sh']::before {
+  //   content: 'sh';
+  // }
+  // .gatsby-highlight pre[class='language-bash']::before {
+  //   content: 'bash';
+  // }
+  // .gatsby-highlight pre[class='language-yaml']::before {
+  //   content: 'yaml';
+  // }
+  // .gatsby-highlight pre[class='language-markdown']::before {
+  //   content: 'md';
+  // }
+  // .gatsby-highlight pre[class='language-json']::before,
+  // .gatsby-highlight pre[class='language-json5']::before {
+  //   content: 'json';
+  // }
+  // .gatsby-highlight pre[class='language-diff']::before {
+  //   content: 'diff';
+  // }
+  // .gatsby-highlight pre[class='language-text']::before {
+  //   content: 'text';
+  // }
+  // .gatsby-highlight pre[class='language-flow']::before {
+  //   content: 'flow';
+  // }
 
   /* Prism Styles */
   .token {

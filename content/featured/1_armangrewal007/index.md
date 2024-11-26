@@ -10,8 +10,9 @@ tech:
   - Ruby
 ---
 
-CLI to display my resumé <br>
-<pre lang="bash"><code>
+CLI to display my resumé
+```bash
 pip install armangrewal007
 brew install armangrewal007
-apt install armangrewal007 </code></pre>
+apt install armangrewal007
+```

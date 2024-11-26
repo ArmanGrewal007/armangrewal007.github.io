@@ -3,8 +3,7 @@ const config = require('./src/config');
 module.exports = {
   siteMetadata: {
     title: 'Arman Grewal',
-    description:
-      '',
+    description: 'This is the personal website for Arman Grewal showcasing his projects, experience and education.',
     siteUrl: 'https://armangrewal007.github.io', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@armangrewal007',
@@ -133,6 +132,18 @@ module.exports = {
                   insertBefore: {
                     function: {
                       superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+                {
+                  language: 'bash',
+                  extend: 'bash',
+                  definition: {
+                    cli_commands: /\b(pip|brew|apt)\b/,
+                  },
+                  insertBefore: {
+                    function: {
+                      cli_commands_keywords: /\b(pip|brew|apt)\b/,
                     },
                   },
                 },

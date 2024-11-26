@@ -27,13 +27,21 @@ const StyledProjectsSection = styled.section`
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* Default: 1 column for mobile */
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
 
-    @media (max-width: 1080px) {
+    @media (max-width: 767px) { /* Phones */
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) and (max-width: 1080px) { /* Tablets */
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1081px) { /* Desktops */
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -277,7 +285,7 @@ const Projects = () => {
       <h2 ref={revealTitle}>Projects | Certifications</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        <b>👉 View Certficate Archive</b>
+        <b>👉 View Certificate Archive 👈</b>
       </Link>
 
       <ul className="projects-grid">

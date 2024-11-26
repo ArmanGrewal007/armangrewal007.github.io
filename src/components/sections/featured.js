@@ -292,12 +292,15 @@ const StyledProject = styled.li`
       border-radius: var(--border-radius);
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1) brightness(90%);
+      max-height: 330px; 
+      object-fit: cover;
+      object-position: top;
 
       @media (max-width: 768px) {
+        filter: grayscale(100%) contrast(1) brightness(50%);
         object-fit: cover;
         width: auto;
-        height: 100%;
-        filter: grayscale(100%) contrast(1) brightness(50%);
+        min-height: stretch;
       }
     }
   }
@@ -365,7 +368,7 @@ const Featured = () => {
                     <p className="project-overline">Featured Project</p>
 
                     <h3 className="project-title">
-                      <a href={external}>{title}</a>
+                      <a href={external || github} aria-label="Title Link">{title}</a>
                     </h3>
 
                     <div
@@ -402,7 +405,7 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
+                  <a href={external ? external : github ? github : '#'} aria-label="Image Link">
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>

@@ -115,11 +115,12 @@ const StyledHighlight = styled.div`
   @media (max-width: 600px) {
     top: auto;
     bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
+    width: var(--tab-width);
+    // max-width: var(--tab-width);
     height: 2px;
     margin-left: 50px;
     transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
+    left: 0;
   }
   @media (max-width: 480px) {
     margin-left: 25px;
