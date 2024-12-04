@@ -28,7 +28,24 @@ module.exports = {
         icon: 'src/images/logo.png',
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          runtimeCaching: [
+            {
+              urlPattern: /^https:\/\/www\.google-analytics\.com\/.*$/,
+              handler: `NetworkOnly`, // Ensure no caching for Google Analytics
+            },
+            {
+              // Default runtime caching behavior for other assets
+              urlPattern: /.*\.(?:js|css|html|json|png|jpg|jpeg|svg|gif)$/,
+              handler: `StaleWhileRevalidate`,
+            },
+          ],
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

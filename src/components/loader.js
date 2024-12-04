@@ -48,28 +48,28 @@ const Loader = ({ finishLoading }) => {
       .add({
         targets: '#logo path',
         delay: 300,
-        duration: 1500,
-        easing: 'easeInOutQuart',
+        duration: 900, // duration for the stroke animation
+        easing: 'easeInOutSine',
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
         targets: '#logo #B',
-        duration: 700,
-        easing: 'easeInOutQuart',
+        duration: 300, // duration for the opacity animation
+        easing: 'easeInOutSine',
         opacity: 1,
       })
       .add({
         targets: '#logo',
-        delay: 500,
-        duration: 300,
-        easing: 'easeInOutQuart',
+        delay: 300,
+        duration: 200, // duration for the shrink animation
+        easing: 'easeInOutSine',
         opacity: 0,
         scale: 0.1,
       })
       .add({
         targets: '.loader',
-        duration: 200,
-        easing: 'easeInOutQuart',
+        duration: 100, // duration for the fade-out animation
+        easing: 'easeInOutSine',
         opacity: 0,
         zIndex: -1,
       });
@@ -84,7 +84,6 @@ const Loader = ({ finishLoading }) => {
   return (
     <StyledLoader className="loader" isMounted={isMounted}>
       <Helmet bodyAttributes={{ class: `hidden` }} />
-
       <div className="logo-wrapper">
         <IconLoader />
       </div>
