@@ -259,6 +259,9 @@ const StyledProject = styled.li`
       background-color: var(--green);
       border-radius: var(--border-radius);
       vertical-align: middle;
+      display: block;
+      position: relative;
+      aspect-ratio: 16 / 9;
 
       &:hover,
       &:focus {
@@ -292,15 +295,17 @@ const StyledProject = styled.li`
       border-radius: var(--border-radius);
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1) brightness(90%);
-      max-height: 330px; 
-      object-fit: cover;
-      object-position: top;
+      position: absolute !important;  // Important to override Gatsby's inline styles
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
 
       @media (max-width: 768px) {
         filter: grayscale(100%) contrast(1) brightness(50%);
-        object-fit: cover;
-        width: auto;
-        min-height: stretch;
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
       }
     }
   }
@@ -405,8 +410,12 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'} aria-label="Image Link">
-                    <GatsbyImage image={image} alt={title} className="img" />
+                  <a href={external || github || '#'} aria-label="Image Link">
+                    {image && (
+                      <GatsbyImage image={image} alt={title} className="img" 
+                                   objectFit="cover" loading="lazy"
+                      />
+                    )}
                   </a>
                 </div>
               </StyledProject>

@@ -74,9 +74,9 @@ const Footer = () => {
   });
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      return;
-    }
+    // if (process.env.NODE_ENV !== 'production') {
+    //   return;
+    // }
     fetch('https://api.github.com/repos/armangrewal007/armangrewal007.github.io')
       .then(response => response.json())
       .then(json => {
@@ -86,7 +86,14 @@ const Footer = () => {
           forks: forks_count,
         });
       })
-      .catch(e => console.error(e));
+      .catch(e => {
+        console.error('Error fetching GitHub data:', e);
+        // Set default values if the fetch fails
+        setGitHubInfo({
+          stars: 0,
+          forks: 0
+        });
+      });
   }, []);
 
   return (
@@ -109,7 +116,7 @@ const Footer = () => {
           <div>Built with ♥️ by <u><b>ArmanGrewal007</b></u>
           </div>
 
-          {githubInfo.stars && githubInfo.forks && (
+          {githubInfo.stars !== null && githubInfo.forks !== null && (
             <div className="github-stats">
               <span>
                 <Icon name="Star" />

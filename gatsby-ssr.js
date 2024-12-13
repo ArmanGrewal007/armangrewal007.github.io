@@ -5,3 +5,20 @@
  */
 
  // You can delete this file if you're not using it
+
+// import React from 'react';
+
+// export const onRenderBody = ({ setHeadComponents }) => {
+//   setHeadComponents([
+//     <script
+//       key="eruda"
+//       src="https://cdn.jsdelivr.net/npm/eruda"
+//     />,
+//     <script
+//       key="eruda-init"
+//       dangerouslySetInnerHTML={{
+//         __html: `eruda.init();`,
+//       }}
+//     />,
+//   ]);
+// };
