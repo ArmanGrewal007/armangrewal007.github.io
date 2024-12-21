@@ -6,6 +6,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import { getIconSvg } from '../../utils';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -172,6 +173,11 @@ const StyledProject = styled.li`
     }
   }
 
+  .project-tech-item {
+    display: flex;
+    align-items: center; 
+  }
+
   .project-company {
     color: var(--green); /* Or any color from your theme */
     font-size: var(--fz-sm); /* Adjust as needed */
@@ -271,7 +277,9 @@ const Projects = () => {
           {tech && (
             <ul className="project-tech-list">
               {tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
+                <li key={i} className="project-tech-item">
+                  {getIconSvg(tech)}{tech}
+                </li>
               ))}
             </ul>
           )}

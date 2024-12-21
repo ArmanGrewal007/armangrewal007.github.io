@@ -6,7 +6,7 @@ github: 'https://github.com/ArmanGrewal007/SudokuJava'
 cta: 'https://github.com/ArmanGrewal007?tab=repositories&q=&type=source&language=&sort=stargazers'
 tech:
   - Java
-  - Java Swing
+  - Swing
 ---
 
 <i><a href="https://en.wikipedia.org/wiki/Mathematics_of_Sudoku#Puzzles" target="_blank">Minimal Sudoku</a></i> generator and solver. <br>

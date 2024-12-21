@@ -1,3 +1,5 @@
+import React from "react";
+
 export const hex2rgba = (hex, alpha = 1) => {
   const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
   return `rgba(${r},${g},${b},${alpha})`;
@@ -22,3 +24,17 @@ export const KEY_CODES = {
   SPACE_IE11: 'Spacebar',
   ENTER: 'Enter',
 };
+
+export function getIconSvg(tech, style = { width: "20px", height: "20px", marginRight: "8px" }) {
+  const baseUrl = "https://icons-theta.vercel.app/icon";
+  const encodedTech = encodeURIComponent(tech.toLowerCase().replace("-", ""));
+  const iconUrl = `${baseUrl}?i=${encodedTech}`;
+
+  return (
+      <img
+          src={iconUrl}
+          alt={`${tech} icon`}
+          style={style}
+      />
+  );
+}

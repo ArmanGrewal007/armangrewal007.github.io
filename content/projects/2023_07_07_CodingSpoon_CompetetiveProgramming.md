@@ -5,7 +5,7 @@ github: ''
 external: 'https://github.com/ArmanGrewal007/Certificates/blob/master/2023_07_07_CodingSpoon_CompetetiveProgramming.pdf'
 tech:
   - DSA
-  - Competetive Programming
+  - Competetive-Programming
 company: 'Coding Spoon'
 showInProjects: false
 ---

@@ -15,10 +15,10 @@
   "browserslist": "> 0.25%, not dead",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby clean && gatsby develop --host=0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby clean && gatsby build && gatsby serve --host=0.0.0.0",
     "clean": "gatsby clean",
     "prepare": "husky install",
     "deploy": "gatsby clean && gatsby build && gh-pages -d public -b gh-pages",

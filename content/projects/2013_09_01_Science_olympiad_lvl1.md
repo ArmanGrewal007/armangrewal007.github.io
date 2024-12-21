@@ -4,7 +4,7 @@ title: 'International Olympiad of Science (L1)'
 github: ''
 external: 'https://github.com/ArmanGrewal007/Certificates/blob/master/2013_09_01_Science_olympiad_lvl1.pdf'
 tech:
-  - Problem Solving
+  - Problem-Solving
 company: 'Certificates'
 showInProjects: false
 ---

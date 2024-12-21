@@ -4,7 +4,7 @@ title: 'Broadridge India Innovation Hackathon'
 github: ''
 external: 'https://github.com/ArmanGrewal007/Certificates/blob/master/2023_08_10_Broadridge_participation.pdf'
 tech:
-  - Problem Solving
+  - Problem-Solving
 company: 'Broadridge'
 showInProjects: false
 ---

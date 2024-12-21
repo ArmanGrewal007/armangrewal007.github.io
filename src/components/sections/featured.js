@@ -6,6 +6,7 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import { getIconSvg } from '../../utils';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
@@ -208,6 +209,11 @@ const StyledProject = styled.li`
     }
   }
 
+  .project-tech-item {
+    display: flex;
+    align-items: center; 
+  }
+
   .project-links {
     display: flex;
     align-items: center;
@@ -356,7 +362,7 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some of my Ideas
+        Featured Projects
       </h2>
 
       <StyledProjectsGrid>
@@ -384,7 +390,8 @@ const Featured = () => {
                     {tech.length && (
                       <ul className="project-tech-list">
                         {tech.map((tech, i) => (
-                          <li key={i}>{tech}</li>
+                          <li key={i} class name="project-tech-item">
+                            {getIconSvg(tech)}{tech}</li>
                         ))}
                       </ul>
                     )}
@@ -412,8 +419,8 @@ const Featured = () => {
                 <div className="project-image">
                   <a href={external || github || '#'} aria-label="Image Link">
                     {image && (
-                      <GatsbyImage image={image} alt={title} className="img" 
-                                   objectFit="cover" loading="lazy"
+                      <GatsbyImage image={image} alt={title} className="img"
+                        objectFit="cover" loading="lazy"
                       />
                     )}
                   </a>

@@ -4,7 +4,7 @@ title: '⭐️ International Olympiad of Science (L2)'
 github: ''
 external: 'https://github.com/ArmanGrewal007/Certificates/blob/master/2013_09_01_Science_olympiad_lvl2.pdf'
 tech:
-  - Problem Solving
+  - Problem-Solving
 company: 'SilverZone'
 showInProjects: false
 ---

@@ -6,8 +6,8 @@ external: 'https://github.com/ArmanGrewal007/ndvi_vals/blob/master/ArmanSinghGre
 github: 'https://github.com/ArmanGrewal007/ndvi_vals'
 tech:
   - Python 
-  - Data Analysis
-  - Machine Learning
+  - Data-Analysis
+  - Machine-Learning
 ---
 
 Analysis of Satellite image data over the Phillipines region.<br>

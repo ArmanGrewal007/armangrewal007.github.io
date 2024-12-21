@@ -4,7 +4,7 @@ title: 'Star olympiad'
 github: ''
 external: 'https://github.com/ArmanGrewal007/Certificates/blob/master/2017_01_31_Star_olympiad.pdf'
 tech:
-  - Problem Solving
+  - Problem-Solving
 company: 'Star Olympiads'
 showInProjects: false
 ---

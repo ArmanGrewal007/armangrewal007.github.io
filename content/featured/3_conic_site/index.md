@@ -5,7 +5,8 @@ cover: './conic.png'
 external: 'https://armangrewal007.github.io/conics_site'
 github: 'https://github.com/ArmanGrewal007/conics_site'
 tech:
-  - HTML-CSS 
+  - HTML
+  - CSS 
   - GeoGebra
 ---
 

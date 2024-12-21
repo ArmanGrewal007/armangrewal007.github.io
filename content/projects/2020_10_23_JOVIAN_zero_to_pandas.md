@@ -5,7 +5,7 @@ github: ''
 external: 'https://github.com/ArmanGrewal007/Certificates/blob/master/2020_10_23_JOVIAN_zero_to_pandas.pdf'
 tech:
   - Python
-  - Data Analysis
+  - Data-Analysis
 company: 'Jovian'
 showInProjects: false
 ---

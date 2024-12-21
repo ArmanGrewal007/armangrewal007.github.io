@@ -4,7 +4,7 @@ title: 'Space_Week'
 github: ''
 external: 'https://github.com/ArmanGrewal007/Certificates/blob/master/2015_09_01_Space_Week.pdf'
 tech:
-  - xx
+  - Astronomy
 company: 'Certificates'
 showInProjects: false
 ---

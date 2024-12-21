@@ -4,9 +4,9 @@ title: 'File Manager'
 github: 'https://github.com/ArmanGrewal007/FileManager'
 external: 'https://www.youtube.com/embed/gcfDvRSu0qk'
 tech:
-  - Node.js
-  - Express.js
-  - S3 Buckets
+  - Nodejs
+  - Express
+  - S3
 company: '(Jul 2023)'
 showInProjects: true
 ---

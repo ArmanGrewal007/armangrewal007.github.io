@@ -8,6 +8,8 @@ import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import { getIconSvg } from '../utils';
+import { get } from 'animejs';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -101,7 +103,7 @@ const StyledTableContainer = styled.div`
         font-family: var(--font-mono);
         line-height: 1.5;
         .separator {
-          margin: 0 5px;
+          margin: 5px 5px;
         }
         span {
           display: inline-block;
@@ -194,8 +196,7 @@ const ArchivePage = ({ location, data }) => {
                         {tech?.length > 0 &&
                           tech.map((item, i) => (
                             <span key={i}>
-                              {item}
-                              {''}
+                              {getIconSvg(item)}{item}{''}
                               {i !== tech.length - 1 && <span className="separator">&middot;</span>}
                             </span>
                           ))}
