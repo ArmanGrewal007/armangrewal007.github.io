@@ -1,5 +1,5 @@
 ## Steps to run
 
 ```bash
-npm install --force
+npm install --force 
 ```
