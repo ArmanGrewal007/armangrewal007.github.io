@@ -128,6 +128,23 @@ const StyledTableContainer = styled.div`
         }
       }
     }
+  .year-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin: 10px 0;
+  }
+
+  .year-divider::before,
+  .year-divider::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--lightest-slate);
+    margin: 0 10px;
+  }
   }
 `;
 
@@ -182,41 +199,54 @@ const ArchivePage = ({ location, data }) => {
                     tech,
                     company,
                   } = node.frontmatter;
+                  const year = new Date(date).getFullYear();
+                  const prevYear = i > 0 ? new Date(projects[i - 1].node.frontmatter.date).getFullYear() : null;
                   return (
-                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
-                      <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
+                    <>
+                      {prevYear && prevYear !== year && (
+                        <tr key={`hr-${i}`}>
+                          <td colSpan="5">
+                            <div className="year-divider">
+                              <span className='overline'>{year}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      )}
+                      <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                        <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
-                      <td className="title">{title}</td>
+                        <td className="title">{title}</td>
 
-                      <td className="company hide-on-mobile">
-                        {company ? <span>{company}</span> : <span>—</span>}
-                      </td>
+                        <td className="company hide-on-mobile">
+                          {company ? <span>{company}</span> : <span>—</span>}
+                        </td>
 
-                      <td className="tech hide-on-mobile">
-                        {tech?.length > 0 &&
-                          tech.map((item, i) => (
-                            <span key={i}>
-                              {getIconSvg(item)}{item}{''}
-                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
-                            </span>
-                          ))}
-                      </td>
+                        <td className="tech hide-on-mobile">
+                          {tech?.length > 0 &&
+                            tech.map((item, i) => (
+                              <span key={i}>
+                                {getIconSvg(item)}{item}{''}
+                                {i !== tech.length - 1 && <span className="separator">&middot;</span>}
+                              </span>
+                            ))}
+                        </td>
 
-                      <td className="links">
-                        <div>
-                          {external && (
-                            <a href={external} aria-label="External Link">
-                              <Icon name="External" />
-                            </a>
-                          )}
-                          {github && (
-                            <a href={github} aria-label="GitHub Link">
-                              <Icon name="GitHub" />
-                            </a>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
+                        <td className="links">
+                          <div>
+                            {external && (
+                              <a href={external} aria-label="External Link">
+                                <Icon name="External" />
+                              </a>
+                            )}
+                            {github && (
+                              <a href={github} aria-label="GitHub Link">
+                                <Icon name="GitHub" />
+                              </a>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    </>
                   );
                 })}
             </tbody>
