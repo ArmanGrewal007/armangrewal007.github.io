@@ -13,6 +13,7 @@ tech:
 CLI to display my resumé
 ```bash
 pip install armangrewal007
-brew install armangrewal007
-apt install armangrewal007
+*brew install armangrewal007
+*apt install armangrewal007
 ```
+\* need additional steps before
