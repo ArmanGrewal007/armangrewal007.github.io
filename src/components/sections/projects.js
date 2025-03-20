@@ -25,6 +25,24 @@ const StyledProjectsSection = styled.section`
     }
   }
 
+  .tech-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 20px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    
+    input[type="checkbox"] {
+      accent-color: var(--green);
+    }
+    
+    input[type="checkbox"]:checked + span {
+      color: var(--green);
+    }
+  }
+
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
     display: grid;
@@ -212,9 +230,11 @@ const Projects = () => {
   `);
 
   const [showMore, setShowMore] = useState(false);
+  const [selectedTechs, setSelectedTechs] = useState([]);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
+  const revealTechFilters = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -224,13 +244,38 @@ const Projects = () => {
 
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealArchiveLink.current, srConfig());
+    revealTechFilters.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
   const GRID_LIMIT = 6;
   const projects = data.projects.edges.filter(({ node }) => node);
-  const firstSix = projects.slice(0, GRID_LIMIT);
-  const projectsToShow = showMore ? projects : firstSix;
+  const techCount = projects.reduce((acc, { node }) => {
+    const techs = node.frontmatter.tech || [];
+    techs.forEach(t => { acc[t] = (acc[t] || 0) + 1; });
+    return acc;
+  }, {});
+
+  const sortedTechs = Array.from(new Set(projects.flatMap(({ node }) => node.frontmatter.tech || [])))
+    .sort((a, b) => techCount[b] - techCount[a]);
+
+  const handleCheckboxChange = (tech) => {
+    setSelectedTechs(prev =>
+      prev.includes(tech)
+        ? prev.filter(item => item !== tech)
+        : [...prev, tech]
+    );
+  };
+
+  // const firstSix = projects.slice(0, GRID_LIMIT);
+  // const projectsToShow = showMore ? projects : firstSix;
+  const filteredProjects = projects.filter(({ node }) => {
+    if (!selectedTechs.length) return true;
+    return selectedTechs.some(tech => node.frontmatter.tech.includes(tech));
+  });
+  const firstSix = filteredProjects.slice(0, GRID_LIMIT);
+  const projectsToShow = showMore ? filteredProjects : firstSix;
+
 
   const projectInner = node => {
     const { frontmatter, html } = node;
@@ -269,7 +314,7 @@ const Projects = () => {
           </h3>
 
           {company && <p className="project-company">{company}</p>}
-  
+
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
 
@@ -290,11 +335,28 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Projects | Certifications</h2>
+      <h2 ref={revealTitle}>Projects</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         <b>👉 View Certificate Archive 👈</b>
       </Link>
+
+      <div className="tech-filter">
+        {sortedTechs.map((tech, index) => (
+          <label
+            key={index}
+            ref={el => (revealTechFilters.current[index] = el)}
+            style={{ marginRight: '1rem' }}>
+            <input
+              type="checkbox"
+              value={tech}
+              checked={selectedTechs.includes(tech)}
+              onChange={() => handleCheckboxChange(tech)}
+            />
+            <span>{tech} ({techCount[tech]})</span>
+          </label>
+        ))}
+      </div>
 
       <ul className="projects-grid">
         {prefersReducedMotion ? (
@@ -327,9 +389,11 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
-      </button>
+      {filteredProjects.length > GRID_LIMIT && (
+        <button className="more-button" onClick={() => setShowMore(!showMore)}>
+          Show {showMore ? 'Less' : 'More'}
+        </button>
+      )}
     </StyledProjectsSection>
   );
 };
