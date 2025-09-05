@@ -70,8 +70,7 @@ const Hero = () => {
 
       <p>
         I am Arman Singh Grewal, an alumnus of <a href="https://study.iitm.ac.in/ds/">IIT Madras</a> 
-        {' '} and <a href="https://study.iitm.ac.in/ds/">LPU</a>, currently exploring ideas in 
-        R&amp;D at <a href="https://www.informatica.com/in/">Informatica Inc.</a>
+        {' '} and <a href="https://study.iitm.ac.in/ds/">LPU</a>, currently exploring ideas @ <a href="https://www.xperi.com/">Xperi Inc.</a>
       </p>
 
 

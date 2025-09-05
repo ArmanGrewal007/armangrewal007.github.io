@@ -9,7 +9,6 @@ import { Layout } from '@components';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
 import { getIconSvg } from '../utils';
-import { get } from 'animejs';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -150,8 +149,9 @@ const StyledTableContainer = styled.div`
 
 const ArchivePage = ({ location, data }) => {
   const allProjects = data.allMarkdownRemark.edges;
-  const projects = allProjects.filter(({ node }) =>
-    node.frontmatter.showInProjects === false);
+  const certificates = allProjects.filter(({ node }) =>
+    (node.frontmatter.showInProjects === false) || 
+    (node.fileAbsolutePath && node.fileAbsolutePath.includes('/content/certificates/')));
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
@@ -174,7 +174,7 @@ const ArchivePage = ({ location, data }) => {
       <main>
         <header ref={revealTitle}>
           <h1 className="big-heading">Archive</h1>
-          <p className="subtitle">{projects.length} certificates and counting ...</p>
+          <p className="subtitle">{certificates.length} certificates and counting ...</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
@@ -189,8 +189,8 @@ const ArchivePage = ({ location, data }) => {
               </tr>
             </thead>
             <tbody>
-              {projects.length > 0 &&
-                projects.map(({ node }, i) => {
+              {certificates.length > 0 &&
+                certificates.map(({ node }, i) => {
                   const {
                     date,
                     github,
@@ -200,7 +200,7 @@ const ArchivePage = ({ location, data }) => {
                     company,
                   } = node.frontmatter;
                   const year = new Date(date).getFullYear();
-                  const prevYear = i > 0 ? new Date(projects[i - 1].node.frontmatter.date).getFullYear() : null;
+                  const prevYear = i > 0 ? new Date(certificates[i - 1].node.frontmatter.date).getFullYear() : null;
                   return (
                     <>
                       {prevYear && prevYear !== year && (
@@ -266,11 +266,14 @@ export default ArchivePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/projects/" } }
+      filter: { 
+        fileAbsolutePath: { regex: "/content/(projects|certificates)/" }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
+          fileAbsolutePath
           frontmatter {
             date
             title

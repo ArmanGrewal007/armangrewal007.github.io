@@ -1,9 +1,9 @@
 ---
 date: '1'
 title: 'Software Engineer Intern'
-company: 'Xperi'
+company: 'Xperi Inc.'
 location: 'Bengaluru, KA'
-range: 'Aug 2023 - Jun 2024'
+range: 'Aug 2023 - Jun 2024 (11 months)'
 url: 'https://xperi.com/'
 ---
 
