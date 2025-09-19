@@ -222,7 +222,7 @@ const Certificates = () => {
     sr.reveal(revealArchiveLink.current, srConfig(300));
   }, []);
 
-  const DISPLAY_LIMIT = 4;
+  const DISPLAY_LIMIT = 10;
   const certificates = data.certificates.edges.filter(({ node }) => node);
   const recentCertificates = certificates.slice(0, DISPLAY_LIMIT);
 
@@ -301,7 +301,7 @@ const Certificates = () => {
           rel="noopener noreferrer"
           ref={revealArchiveLink}
         >
-          Show other {certificates.length - DISPLAY_LIMIT} certificates...
+          Show all {certificates.length} certificates...
         </StyledMoreButton>
       </div>
     </StyledCertificatesSection>
