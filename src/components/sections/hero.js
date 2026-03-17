@@ -40,9 +40,19 @@ const StyledHeroSection = styled.section`
     max-width: 540px;
   }
 
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
   }
 `;
 
@@ -69,7 +79,7 @@ const Hero = () => {
       </p>
 
       <p>
-        I am Arman Singh Grewal, an alumnus of <a href="https://study.iitm.ac.in/ds/">IIT Madras</a> 
+        I am Arman Singh Grewal, an alumnus of <a href="https://study.iitm.ac.in/ds/">IIT Madras</a>
         {' '} and <a href="https://study.iitm.ac.in/ds/">LPU</a>, currently exploring ideas @ <a href="https://www.xperi.com/">Xperi Inc.</a>
       </p>
 
@@ -82,13 +92,22 @@ const Hero = () => {
     </>
   );
   const five = (
-    <a
-      className="email-link"
-      href="https://github.com/armangrewal007/Resume"
-      target="_blank"
-      rel="noreferrer">
-      pip install <u><b>armangrewal007</b></u>
-    </a>
+    <div className="cta-buttons">
+      {/* <a
+        className="email-link"
+        href="https://github.com/armangrewal007/Resume"
+        target="_blank"
+        rel="noreferrer">
+        pip install <u><b>armangrewal007</b></u>
+      </a> */}
+      <a
+        className="email-link"
+        href="https://armangrewal007.github.io/blog/"
+        target="_blank"
+        rel="noreferrer">
+        Check out my Blog
+      </a>
+    </div>
   );
 
   const items = [one, two, three, four, five];
