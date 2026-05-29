@@ -7,6 +7,6 @@ range: 'Aug 2023 - Jun 2024 (11 months)'
 url: 'https://xperi.com/'
 ---
 
-- Developed and improved processes to collect and enrich metadata for movies before sending it to the next team.
-- Wrote a Python script to sync data b/w **ElasticSearch** and **MSSQL**, reducing sync time from **72 to 4hrs**.
-- Used **Telegraf** to collect data from **Burrow** and send it to **Splunk** for monitoring using interactive dashboards
+- Built and enhanced metadata collection, enrichment, and processing pipelines for movies and episodes, improving throughput and reliability of delivery to **40+ downstream partner systems**.
+- Cut data sync latency by **94% (72 hrs → 4 hrs)** by redesigning the Python synchronization framework between Elasticsearch and MSSQL, removing bottlenecks in the metadata consistency layer.
+- Implemented a monitoring pipeline using **Telegraf** to collect Kafka consumer lag metrics from **Burrow** and visualize them in **Splunk** via interactive dashboards.

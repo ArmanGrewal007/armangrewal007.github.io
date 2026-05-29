@@ -125,8 +125,8 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Python', 'SQL', 'Java', 'C++', 
-  'Next.js', 'React.js'];
+  const skills = ['Python', 'SQL', 'Java', 'C++',
+    'Next.js', 'React.js'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,30 +135,28 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-          <p>
-            My recent work includes spearheading the UI development of the {''}
-            <b>Resource Utilization Dashboard</b> using Next.js and the Droplets 
-            library. As part of a larger initiative, this project has contributed 
-            to saving <a href="https://www.informatica.com/in/">Informatica</a> {' '}
-            approximately $9 million year-to-date.
-          </p>
-          <p>
-            Simultaneously, I am actively involved in developing the 
-            <a href="https://www.informatica.com/blogs/introducing-claire-gpt-the-future-of-data-management.html">Claire®GPT prototype</a>.
-          </p>
-          <p>
-            During my internship at <a href="https://xperi.com/">Xperi (TiVo)</a>, I optimized 
-            data synchronization process between ElasticSearch and MSSQL databases, 
-            reducing execution time from <b>72hrs to just 4hrs</b>, 
-            and streamlined monitoring systems with Telegraf and Splunk.
-            </p>
-            
             <p>
-            Beyond coding, I've led initiatives such as captaining my volleyball team to a 
-            championship victory at IIT Madras and winning Section of the Year 2022 LPU.
+              My recent work includes building and maintaining pipelines that deliver metadata to <b>40+ global partners</b> -
+              shipped a pre-ingest DQ platform with Polars and DuckDB that eliminated manual validation across <b>10+ formats</b>,
+              led a zero-downtime OS migration across <b>50+ scripts</b> including Python upgrades and Elasticsearch SSL auth
             </p>
             <p>
-            And this is just a glimpse of what I bring to the table!
+              At <a href="https://www.informatica.com/in/">Informatica</a>, I built a cross-cloud resource dashboard (AWS, GCP, Azure, OCI) that contributed to
+              <b> $9M in YTD cost savings</b>, and worked on the Claire® GPT prototype.
+            </p>
+            <p>
+              During my internship at <a href="https://xperi.com/">Xperi (TiVo)</a>, I optimized
+              data synchronization process between ElasticSearch and MSSQL databases,
+              reducing execution time from <b>72hrs to just 4hrs</b>,
+              and streamlined monitoring systems with Telegraf and Splunk.
+            </p>
+
+            <p>
+              Beyond coding, I've led initiatives such as captaining my volleyball team to a
+              championship victory at IIT Madras and winning Section of the Year 2022 LPU.
+            </p>
+            <p>
+              And this is just a glimpse of what I bring to the table!
             </p>
           </div>
 

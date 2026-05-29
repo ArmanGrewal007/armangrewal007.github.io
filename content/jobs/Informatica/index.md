@@ -7,5 +7,5 @@ range: 'Aug 2024 - May 2025 (10 months)'
 url: 'https://www.informatica.com/in/'
 ---
 
-- Led the UI development and contributed to backend integration of a Kubernetes cluster metrics dashboard, leveraging **Next.js** and Informatica’s proprietary **Droplets** component library.
-- Contributed to the prototyping of **Claire®GPT**, Informatica’s generative AI assistant, leveraging **agentic AIs** for autonomous data management.
+- Built a cross-cloud Resource Utilization Dashboard (AWS, GCP, Azure, OCI) in **Next.js** and **Highcharts**, with interactive region → cluster → node → service drill-down; part of an initiative that drove **$9M in YTD cost savings**.
+- Implemented lazy-loaded tree views and **SWR polling (15-min intervals)** matched to **Airflow’s** ingestion cadence, avoiding upfront fetch of **600+ nodes** and services across the **4 cloud providers**.
